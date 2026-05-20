@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="28 9.5 128 128" fill="none" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Stanicdesign logo</title>
+  <desc id="logoDesc">Wit SD monogram zonder achtergrond</desc>
+  <path d="M58 38C46 38 37 45.5 37 56.5C37 67 44.6 72.2 57 75.3L67.5 78C77.2 80.5 81 83.3 81 89.5C81 97 74.3 102 63.8 102C52.2 102 44.7 96.8 41.9 86.7L28 92.3C32.9 108 46.3 117 63.6 117C83.8 117 97 106.1 97 88.9C97 75.4 88.7 69.2 73.6 65.4L62.9 62.7C54.2 60.5 52 57.9 52 53.7C52 48.6 56.7 44.3 64.2 44.3C72 44.3 78.1 48 81.4 55L94.5 48.5C88.7 36.8 78 30 64.1 30C60.6 30 57.2 30.4 54 31.1L58 38Z" fill="white"/>
+  <path d="M103 34H120.5C142.2 34 156 46.6 156 73.6C156 100.5 142.2 113 120.5 113H103V34ZM119 48.5V98.5H120.3C132.5 98.5 139.5 90.7 139.5 73.6C139.5 56.3 132.5 48.5 120.3 48.5H119Z" fill="white"/>
+</svg>
