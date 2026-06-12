@@ -1,21 +1,16 @@
-# Stanicdesign — 1:1 clone
+# Astro Visuals
 
-Replica van [stanicdesign.nl](https://stanicdesign.nl/) gebouwd met React, Vite en Tailwind CSS.
+Portfolio site voor **Astro Visuals** — videoclips, logo's en album covers.
 
-## Starten
+Gebouwd met React, Vite en Tailwind CSS.
+
+## Lokaal draaien
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:5173
+## Deploy
 
-## Pagina's
-
-- `/` — Home
-- `/portfolio` — Portfolio
-- `/services` — Diensten
-- `/contact` — Contact
-- `/offerte` — Offerte-stappenplan
-- `/privacy`, `/cookies`, `/voorwaarden` — Juridisch
+Zie [DEPLOY.md](./DEPLOY.md) voor Render static site setup.

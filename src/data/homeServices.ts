@@ -1,20 +1,20 @@
 export const homeServices = [
   {
     no: "01",
-    title: "Webdesign & development",
+    title: "Videoclips",
     description:
-      "Wij transformeren jouw visie van eerste schets tot een razendsnelle live-site. Met een uniek custom design en schone code bouwen we aan een online visitekaartje dat niet alleen mooi oogt, maar ook écht resultaat oplevert.",
+      "Van concept tot final export — Astro regisseert beeld, pacing en sfeer zodat jouw track visueel blijft hangen. Raw energy, cinematic shots of abstract motion: alles op maat van de muziek.",
   },
   {
     no: "02",
-    title: "Hosting, domein & mail",
+    title: "Logo's & identity",
     description:
-      "Geen omkijken meer naar de technische kant van je website. Wij regelen razendsnelle hosting, leggen je gewenste domeinnamen vast en richten professionele mailadressen voor je in. Alles veilig onder één dak, zodat jij je kunt focussen op je business.",
+      "Herkenbare merken die werken op elk formaat. Van monogram tot volledige brand kit — strak, memorabel en gebouwd voor artiesten, labels en creatieve ondernemers.",
   },
   {
     no: "03",
-    title: "Onderhoud & support",
+    title: "Album covers",
     description:
-      "Een website is nooit echt 'af'. Wij zorgen dat jouw platform altijd up-to-date, veilig en snel blijft. Heb je een vraag of wil je iets aanpassen? Je hebt direct contact met een vast aanspreekpunt dat jouw project door en door kent — bij ons ben je een partner, geen ticketnummer.",
+      "Artwork dat de luisterervaring versterkt voordat de eerste noot speelt. Concept, typografie en compositie die passen bij jouw sound — digitaal én print-ready.",
   },
 ];

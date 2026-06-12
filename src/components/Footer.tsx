@@ -1,98 +1,105 @@
 import { Link } from "react-router-dom";
-import { Logo } from "./Logo";
+import { LogoMark } from "./LogoMark";
+import { brand } from "../data/brand";
+
+const siteLinks = [
+  { label: "Home", to: "/" },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "Diensten", to: "/services" },
+  { label: "Contact", to: "/contact" },
+];
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/8 bg-[hsl(0_0%_4%)]">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          <div className="lg:col-span-2">
-            <p className="mb-2 text-[11px] uppercase tracking-[0.2em] text-[hsl(var(--muted-foreground))]">
-              Manifest — 00
+    <footer className="mt-24 border-t border-border/60">
+      <div className="container px-6 pt-24 pb-20 md:pt-32">
+        <div className="mb-20 grid items-start gap-8 md:mb-28 md:grid-cols-12 md:gap-12">
+          <div className="md:col-span-9">
+            <div className="mb-8 flex items-center gap-4">
+              <span className="block h-px w-12 bg-foreground/40" />
+              <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                Manifest — 00
+              </span>
+            </div>
+            <p
+              className="display max-w-4xl text-balance uppercase leading-[1.02]"
+              style={{ fontSize: "clamp(1.875rem, 5.2vw, 4.25rem)" }}
+            >
+              Liever één sterk{" "}
+              <span className="accent-serif text-muted-foreground normal-case italic">
+                visueel verhaal
+              </span>
+              <br className="hidden sm:block" /> dan tien{" "}
+              <span className="accent-serif text-muted-foreground normal-case italic">
+                generieke templates.
+              </span>
             </p>
-            <p className="max-w-md text-2xl font-bold leading-snug md:text-3xl">
-              Liever bouw ik één goede site
-              <br />
-              dan tien gehaaste.
-            </p>
-            <div className="mt-6 flex gap-6 text-sm text-[hsl(var(--muted-foreground))]">
+          </div>
+          <div className="flex md:col-span-3 md:justify-end md:text-right">
+            <div className="inline-flex flex-col gap-2 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
               <span>Studio</span>
-              <span>Sinds 2023</span>
-              <span>Nederland</span>
-            </div>
-          </div>
-
-          <div>
-            <Logo />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">
-              Een soloontwerper uit Nederland die websites op maat bouwt — geen
-              sjablonen, wel persoonlijke aandacht.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-8">
-            <div>
-              <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide">
-                Site
-              </h2>
-              <ul className="space-y-2 text-sm text-[hsl(var(--muted-foreground))]">
-                <li>
-                  <Link to="/" className="hover:text-white">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/portfolio" className="hover:text-white">
-                    Portfolio
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services" className="hover:text-white">
-                    Diensten
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="hover:text-white">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide">
-                Contact
-              </h2>
-              <p className="text-sm text-[hsl(var(--muted-foreground))]">
-                E-mail:{" "}
-                <a
-                  href="mailto:info@stanicdesign.nl"
-                  className="hover:text-white"
-                >
-                  info@stanicdesign.nl
-                </a>
-                <br />
-                Telefoon:{" "}
-                <a href="tel:+31636408116" className="hover:text-white">
-                  06 36408116
-                </a>
-              </p>
-              <p className="mt-3 text-xs text-[hsl(var(--muted-foreground))]">
-                Reactie binnen 24 uur
-              </p>
+              <span className="text-foreground">Sinds {brand.since}</span>
+              <span>{brand.location}</span>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/8 pt-8 text-xs text-[hsl(var(--muted-foreground))] md:flex-row md:items-center md:justify-between">
-          <p>© 2026 Stanicdesign · BTW-vrijgesteld (KOR)</p>
+        <div className="grid gap-12 border-t border-border/60 pt-12 md:grid-cols-3">
+          <div>
+            <div className="mb-4 flex items-center gap-3">
+              <LogoMark size={36} />
+              <span className="display text-lg uppercase tracking-tight text-foreground">
+                {brand.name}
+              </span>
+            </div>
+            <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Visuele studio van {brand.designer} — videoclips, logo&apos;s en
+              album covers voor artiesten en creatieve merken.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="eyebrow mb-4">Navigatie</h2>
+            <div className="flex flex-col gap-2">
+              {siteLinks.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="w-fit text-sm text-foreground transition-colors hover:text-muted-foreground"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="eyebrow mb-4">Contact</h2>
+            <p className="text-sm text-foreground">
+              E-mail:{" "}
+              <a
+                href={`mailto:${brand.email}`}
+                className="hover:text-muted-foreground"
+              >
+                {brand.email}
+              </a>
+            </p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Reactie binnen 24 uur
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-16 flex flex-col gap-4 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
+          <p>© 2026 {brand.name} · {brand.tagline}</p>
           <div className="flex gap-6">
-            <Link to="/privacy" className="hover:text-white">
+            <Link to="/privacy" className="hover:text-foreground">
               Privacy
             </Link>
-            <Link to="/cookies" className="hover:text-white">
+            <Link to="/cookies" className="hover:text-foreground">
               Cookies
             </Link>
-            <Link to="/voorwaarden" className="hover:text-white">
+            <Link to="/voorwaarden" className="hover:text-foreground">
               Voorwaarden
             </Link>
           </div>

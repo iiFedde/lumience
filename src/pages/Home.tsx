@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, ChevronRight, Star, Zap, Heart } from "lucide-react";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { SplitText } from "../components/SplitText";
 import { CountUp } from "../components/CountUp";
 import { Reveal } from "../components/Reveal";
-import { PhoneMockupPortfolio, PhoneMockupStudio } from "../components/PhoneMockup";
+import { TrustBar } from "../components/TrustBar";
+import { ShowcaseAlbum, ShowcaseVideo } from "../components/VisualShowcase";
 import { homeServices } from "../data/homeServices";
 
 const marqueeItems = [
-  "Webdesign",
-  "Development",
-  "Hosting",
+  "Videoclips",
+  "Logo's",
+  "Album covers",
+  "Motion",
   "Branding",
-  "SEO",
-  "Onderhoud",
-  "Webshop",
+  "Promo",
+  "Art direction",
 ];
 
 function StickyServiceCard({
@@ -30,7 +31,7 @@ function StickyServiceCard({
     >
       <Link
         to="/services"
-        className="group relative flex min-h-[60vh] flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[hsl(var(--card)/0.6)] p-6 backdrop-blur-xl transition hover:border-white/20 md:min-h-[70vh] md:p-14 lg:p-16"
+        className="group relative flex min-h-[60vh] flex-col justify-between overflow-hidden rounded-3xl border border-border/40 bg-[hsl(var(--card)/0.6)] p-6 backdrop-blur-xl transition hover:border-white/20 md:min-h-[70vh] md:p-14 lg:p-16"
       >
         <span className="text-xs text-[hsl(var(--muted-foreground))]">
           {service.no}
@@ -64,7 +65,7 @@ export function Home() {
               style={{ fontSize: "clamp(1.875rem, 9vw, 5.5rem)" }}
             >
               <SplitText splitBy="char" stagger={26}>
-                Jouw nieuwe site,
+                Jouw visie,
               </SplitText>
               <br />
               <SplitText
@@ -73,24 +74,24 @@ export function Home() {
                 delay={350}
                 className="accent-serif normal-case text-[hsl(var(--foreground)/0.9)]"
               >
-                live in 2 weken
+                visueel vertaald
               </SplitText>
               <span className="text-[hsl(var(--muted-foreground))]">.</span>
             </h1>
             <Reveal delay={260}>
               <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-[hsl(var(--muted-foreground))] md:text-lg">
-                Vanaf{" "}
+                Astro Visuals maakt{" "}
                 <span className="font-semibold text-[hsl(var(--foreground))]">
-                  € 24,99 per maand
+                  videoclips, logo&apos;s en album covers
                 </span>{" "}
-                een website op maat — sneller, mooier en persoonlijker dan een
-                template. Geen verrassingen, gewoon één vast aanspreekpunt.
+                — bold, coherent en op maat van artiesten en creatieve merken.
+                Eén maker, één visuele lijn.
               </p>
             </Reveal>
             <Reveal delay={380}>
               <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-4 sm:w-auto sm:flex-row sm:items-center">
                 <Link to="/contact" className="pill-light group justify-center">
-                  Claim je intake
+                  Start je project
                   <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
                 <Link to="/portfolio" className="pill-ghost group justify-center">
@@ -99,19 +100,24 @@ export function Home() {
                 </Link>
               </div>
               <p className="mt-4 text-center text-[11px] text-[hsl(var(--muted-foreground))]">
-                Gratis & vrijblijvend · reactie binnen 24 uur
+                Gratis kennismaking · reactie binnen 24 uur
               </p>
             </Reveal>
           </div>
         </div>
       </section>
 
-      <div className="overflow-hidden border-y border-white/10 py-4">
-        <div className="marquee-track flex w-max gap-8 whitespace-nowrap text-sm uppercase tracking-[0.15em] text-[hsl(var(--muted-foreground))]">
+      <TrustBar />
+
+      <div className="relative overflow-hidden border-y border-border/60 py-6">
+        <div className="marquee-track" style={{ ["--mq" as string]: "40s" }}>
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
-            <span key={`${item}-${i}`} className="inline-flex items-center gap-8">
+            <span
+              key={`${item}-${i}`}
+              className="display inline-flex items-center gap-12 text-3xl uppercase text-foreground/80 md:text-5xl"
+            >
               {item}
-              <span className="text-white/20">·</span>
+              <span className="text-muted-foreground/50">·</span>
             </span>
           ))}
         </div>
@@ -123,13 +129,13 @@ export function Home() {
             <div className="relative flex items-center justify-center md:col-span-7 md:h-[560px]">
               <div className="flex w-full flex-col items-center gap-8 md:hidden">
                 <div className="breathe" style={{ transform: "rotate(-4deg)" }}>
-                  <PhoneMockupStudio />
+                  <ShowcaseAlbum />
                 </div>
                 <div
                   className="breathe"
                   style={{ animationDelay: "1.5s", transform: "rotate(4deg)" }}
                 >
-                  <PhoneMockupPortfolio />
+                  <ShowcaseVideo />
                 </div>
               </div>
               <div
@@ -137,7 +143,7 @@ export function Home() {
                 style={{ transform: "translate(-55%, 10px) rotate(-5deg)", zIndex: 1 }}
               >
                 <div className="breathe">
-                  <PhoneMockupStudio />
+                  <ShowcaseAlbum />
                 </div>
               </div>
               <div
@@ -145,7 +151,7 @@ export function Home() {
                 style={{ transform: "translate(55%, -30px) rotate(5deg)", zIndex: 2 }}
               >
                 <div className="breathe" style={{ animationDelay: "1.5s" }}>
-                  <PhoneMockupPortfolio />
+                  <ShowcaseVideo />
                 </div>
               </div>
             </div>
@@ -158,7 +164,7 @@ export function Home() {
                 style={{ fontSize: "clamp(1.75rem, 7vw, 4rem)" }}
               >
                 <SplitText splitBy="word" stagger={70}>
-                  Geen sjablonen.
+                  Geen stock.
                 </SplitText>
                 <br />
                 <SplitText
@@ -172,8 +178,9 @@ export function Home() {
               </h2>
               <Reveal delay={300}>
                 <p className="mt-8 max-w-md leading-relaxed text-[hsl(var(--muted-foreground))]">
-                  Elke site begint bij een gesprek en eindigt bij iets waar je
-                  trots op bent. Snel, schoon en gebouwd om te blijven.
+                  Elk project begint met jouw sound, merk of verhaal. Astro
+                  vertaalt dat naar beeld dat blijft hangen — van eerste schets
+                  tot final export.
                 </p>
               </Reveal>
             </div>
@@ -181,17 +188,17 @@ export function Home() {
         </div>
       </section>
 
-      <section className="border-y border-white/10">
+      <section className="border-y border-border/60">
         <div className="container grid grid-cols-1 gap-0 px-6 py-14 sm:grid-cols-3">
-          <Reveal className="flex flex-col gap-2 border-b border-white/10 py-6 sm:border-b-0 sm:py-0">
+          <Reveal className="flex flex-col gap-2 border-b border-border/60 py-6 sm:border-b-0 sm:py-0">
             <span className="display text-5xl md:text-6xl">
-              <CountUp to={10} suffix="+" />
+              <CountUp to={45} suffix="+" />
             </span>
-            <span className="eyebrow">Sites live</span>
+            <span className="eyebrow">Projecten afgerond</span>
           </Reveal>
           <Reveal
             delay={120}
-            className="flex flex-col gap-2 border-b border-white/10 py-6 sm:border-b-0 sm:border-l sm:py-0 sm:pl-10"
+            className="flex flex-col gap-2 border-b border-border/60 py-6 sm:border-b-0 sm:border-l sm:py-0 sm:pl-10"
           >
             <span className="display text-5xl md:text-6xl">
               <CountUp to={24} />
@@ -209,17 +216,17 @@ export function Home() {
             <span className="display text-5xl md:text-6xl">
               <CountUp to={1} />
             </span>
-            <span className="eyebrow">Vast aanspreekpunt</span>
+            <span className="eyebrow">Creative director</span>
           </Reveal>
         </div>
       </section>
 
-      <section className="border-t border-white/10">
+      <section className="border-t border-border/60">
         <div className="container px-6 py-24 md:py-32">
           <Reveal>
             <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
-                <div className="eyebrow mb-6">03 — Wat ik doe</div>
+                <div className="eyebrow mb-6">03 — Wat Astro doet</div>
                 <h2
                   className="display uppercase"
                   style={{ fontSize: "clamp(1.875rem, 7vw, 4.5rem)" }}
@@ -246,29 +253,29 @@ export function Home() {
         </div>
       </section>
 
-      <section className="relative border-t border-white/10">
+      <section className="relative border-t border-border/60">
         <div className="container px-6 py-24 md:py-32">
           <Reveal>
             <div className="relative overflow-hidden rounded-[2.5rem] bg-[hsl(var(--foreground))] p-10 text-[hsl(var(--background))] md:p-16">
-              <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-blue-500/30 blur-3xl" />
-              <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-emerald-400/20 blur-3xl" />
+              <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-violet-500/30 blur-3xl" />
+              <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-fuchsia-400/20 blur-3xl" />
               <div className="relative z-10 max-w-3xl">
                 <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[11px] uppercase tracking-[0.2em]">
-                  Geen vaste prijs
+                  Op maat geprijsd
                 </div>
                 <h2
                   className="display uppercase"
                   style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)" }}
                 >
-                  Elke site is anders.{" "}
+                  Elk project is anders.{" "}
                   <span className="accent-serif normal-case opacity-70">
-                    Dus jouw prijs ook.
+                    Jouw offerte ook.
                   </span>
                 </h2>
                 <p className="mt-6 max-w-xl text-base text-white/70 md:text-lg">
-                  Loop in 2 minuten door ons stappenplan. Vink aan wat je wil,
-                  beschrijf je idee — ik stuur je binnen 24 uur een persoonlijke
-                  offerte op maat.
+                  Loop in 2 minuten door het stappenplan. Vertel wat je zoekt,
+                  deel je referenties — Astro stuurt binnen 24 uur een
+                  persoonlijke offerte.
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4">
                   <Link
@@ -288,26 +295,11 @@ export function Home() {
                 <ul className="mt-10 grid gap-4 text-sm text-white/60 sm:grid-cols-3">
                   <li>✓ Geen verplichtingen</li>
                   <li>✓ Antwoord binnen 24 uur</li>
-                  <li>✓ Eén vast aanspreekpunt</li>
+                  <li>✓ Revisierondes inbegrepen</li>
                 </ul>
               </div>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="border-t border-white/10 py-8">
-        <div className="container flex flex-wrap items-center justify-center gap-8 px-6 text-sm text-[hsl(var(--muted-foreground))]">
-          <span className="inline-flex items-center gap-2">
-            <Star className="h-4 w-4 fill-white text-white" /> 5,0 sterren van
-            klanten
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <Zap className="h-4 w-4" /> Live in 2 weken
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <Heart className="h-4 w-4" /> Vast aanspreekpunt
-          </span>
         </div>
       </section>
     </>

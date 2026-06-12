@@ -26,7 +26,7 @@ export function CountUp({
         };
         requestAnimationFrame(tick);
       },
-      { threshold: 0.3 },
+      { threshold: 0.4 },
     );
     obs.observe(el);
     return () => obs.disconnect();

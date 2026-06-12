@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
+import { LogoMark } from "./LogoMark";
 
 export function Logo() {
   return (
     <Link to="/" className="group flex items-center gap-3">
-      <img src="/logo.svg" alt="" className="h-9 w-9" aria-hidden />
-      <span className="text-sm font-bold uppercase tracking-wide">
-        <span className="text-white">Stanic</span>
-        <span className="text-[hsl(var(--muted-foreground))]">design</span>
+      <LogoMark size={36} />
+      <span className="display text-lg uppercase tracking-tight">
+        Astro
+        <span className="text-muted-foreground"> Visuals</span>
       </span>
     </Link>
   );

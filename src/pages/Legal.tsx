@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Reveal } from "../components/Reveal";
+import { brand } from "../data/brand";
 
 function LegalLayout({
   title,
@@ -40,7 +41,7 @@ export function Privacy() {
     >
       <Reveal>
         <p>
-          Stanicdesign hecht waarde aan jouw privacy. In deze verklaring lees je
+          {brand.name} hecht waarde aan jouw privacy. In deze verklaring lees je
           welke persoonsgegevens worden verzameld, waarom, en welke rechten je
           hebt.
         </p>
@@ -48,13 +49,9 @@ export function Privacy() {
       <Reveal>
         <h2>Verwerkingsverantwoordelijke</h2>
         <p>
-          Stanicdesign, gevestigd in Nederland.
+          {brand.name} ({brand.designer}), gevestigd in {brand.location}.
           <br />
-          E-mail: info@stanicdesign.nl
-          <br />
-          Tel: 06 36408116
-          <br />
-          KvK: Binnenkort
+          E-mail: {brand.email}
         </p>
       </Reveal>
       <Reveal>
@@ -101,7 +98,7 @@ export function Privacy() {
         <h2>Jouw rechten</h2>
         <p>
           Je hebt recht op inzage, correctie, verwijdering en bezwaar. Stuur
-          hiervoor een e-mail naar info@stanicdesign.nl. Klachten kun je
+          hiervoor een e-mail naar {brand.email}. Klachten kun je
           indienen bij de Autoriteit Persoonsgegevens
           (autoriteitpersoonsgegevens.nl).
         </p>
@@ -160,8 +157,8 @@ export function Voorwaarden() {
       <Reveal>
         <h2>1. Definities</h2>
         <p>
-          <strong>Opdrachtnemer:</strong> Stanicdesign, gevestigd in Nederland,
-          KvK [KvK-nummer]. <strong>Opdrachtgever:</strong> de partij die een
+          <strong>Opdrachtnemer:</strong> {brand.name}, gevestigd in{" "}
+          {brand.location}. <strong>Opdrachtgever:</strong> de partij die een
           offerte aanvraagt of een opdracht verstrekt.
         </p>
       </Reveal>
@@ -176,9 +173,8 @@ export function Voorwaarden() {
       <Reveal>
         <h2>3. Prijzen en btw</h2>
         <p>
-          Alle prijzen zijn in euro&apos;s. Stanicdesign maakt gebruik van de
-          kleineondernemersregeling (KOR) en is daarom vrijgesteld van btw — er
-          wordt geen btw berekend of vermeld op de factuur. Meerwerk buiten de
+          Alle prijzen zijn in euro&apos;s. {brand.name} factureert per project
+          of pakket zoals overeengekomen in de offerte. Meerwerk buiten de
           offerte wordt vooraf afgestemd en apart in rekening gebracht.
         </p>
       </Reveal>
@@ -202,15 +198,15 @@ export function Voorwaarden() {
         <h2>6. Intellectueel eigendom</h2>
         <p>
           Na volledige betaling verkrijgt de opdrachtgever het gebruiksrecht op
-          de opgeleverde website. Onderliggende ontwerpen, broncode-componenten
-          en concepten blijven eigendom van Stanicdesign, tenzij schriftelijk
-          anders is afgesproken.
+          de opgeleverde visuele werken (videoclips, artwork, logo&apos;s).
+          Onderliggende bronbestanden en concepten blijven eigendom van{" "}
+          {brand.name}, tenzij schriftelijk anders is afgesproken.
         </p>
       </Reveal>
       <Reveal>
         <h2>7. Aansprakelijkheid</h2>
         <p>
-          De aansprakelijkheid van Stanicdesign is beperkt tot het bedrag dat in
+          De aansprakelijkheid van {brand.name} is beperkt tot het bedrag dat in
           het betreffende project is gefactureerd. Indirecte schade,
           gevolgschade en gederfde winst zijn uitgesloten.
         </p>
@@ -218,16 +214,16 @@ export function Voorwaarden() {
       <Reveal>
         <h2>8. Overmacht</h2>
         <p>
-          Bij overmacht (waaronder ziekte, storingen bij hostingproviders en
-          andere onvoorziene omstandigheden) worden verplichtingen opgeschort
-          zonder dat een van de partijen schadeplichtig is.
+          Bij overmacht (waaronder ziekte en andere onvoorziene omstandigheden)
+          worden verplichtingen opgeschort zonder dat een van de partijen
+          schadeplichtig is.
         </p>
       </Reveal>
       <Reveal>
         <h2>9. Klachten</h2>
         <p>
           Klachten dienen binnen 14 dagen na oplevering schriftelijk gemeld te
-          worden via info@stanicdesign.nl, zodat samen naar een passende
+          worden via {brand.email}, zodat samen naar een passende
           oplossing gezocht kan worden.
         </p>
       </Reveal>

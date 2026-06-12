@@ -3,12 +3,13 @@ import { ArrowUpRight, Calendar, Mail } from "lucide-react";
 import { SplitText } from "../components/SplitText";
 import { Reveal } from "../components/Reveal";
 import { BookingCalendar } from "../components/BookingCalendar";
+import { brand } from "../data/brand";
 
 const labels = {
   name: "Naam",
   email: "E-mail",
-  phone: "Telefoonnummer",
-  message: "Vertel me over je idee",
+  phone: "Telefoonnummer (optioneel)",
+  message: "Vertel over je project",
 };
 
 export function Contact() {
@@ -30,13 +31,13 @@ export function Contact() {
           <Mail className="mx-auto mb-8 h-8 w-8 text-white" strokeWidth={1.2} />
           <h2 className="display mb-4 text-4xl uppercase md:text-5xl">
             Bericht{" "}
-            <span className="accent-serif normal-case text-[hsl(var(--muted-foreground))]">
+            <span className="accent-serif normal-case text-muted-foreground">
               onderweg.
             </span>
           </h2>
-          <p className="text-[hsl(var(--muted-foreground))]">
-            Bedankt — ik lees je bericht persoonlijk en kom meestal binnen een
-            dag bij je terug.
+          <p className="text-muted-foreground">
+            Bedankt — Astro leest je bericht persoonlijk en komt meestal binnen
+            een dag bij je terug.
           </p>
         </div>
       </div>
@@ -50,12 +51,12 @@ export function Contact() {
           <Calendar className="mx-auto mb-8 h-8 w-8 text-white" strokeWidth={1.2} />
           <h2 className="display mb-4 text-4xl uppercase md:text-5xl">
             Afspraak{" "}
-            <span className="accent-serif normal-case text-[hsl(var(--muted-foreground))]">
+            <span className="accent-serif normal-case text-muted-foreground">
               aangevraagd.
             </span>
           </h2>
-          <p className="text-[hsl(var(--muted-foreground))]">
-            Bedankt — ik bevestig je afspraak zo snel mogelijk per e-mail.
+          <p className="text-muted-foreground">
+            Bedankt — Astro bevestigt je afspraak zo snel mogelijk per e-mail.
           </p>
         </div>
       </div>
@@ -67,7 +68,7 @@ export function Contact() {
       <div className="container relative px-6">
         <div className="grid gap-12 md:grid-cols-12 md:gap-20">
           <Reveal className="md:col-span-5">
-            <span className="text-xs uppercase tracking-[0.2em] text-[hsl(var(--muted-foreground))]">
+            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
               Contact
             </span>
             <h1 className="display mt-6 mb-8 text-balance text-3xl uppercase leading-[1.05] sm:text-4xl md:text-5xl">
@@ -78,26 +79,24 @@ export function Contact() {
                 splitBy="char"
                 stagger={40}
                 delay={250}
-                className="accent-serif normal-case text-[hsl(var(--muted-foreground))]"
+                className="accent-serif normal-case text-muted-foreground"
               >
                 kennismaken.
               </SplitText>
             </h1>
-            <p className="mb-12 max-w-md leading-relaxed text-[hsl(var(--muted-foreground))]">
-              Stuur me een bericht — een idee, een vraag, of gewoon even hallo.
-              Ik reageer persoonlijk en meestal binnen een dag. Beloofd.
+            <p className="mb-12 max-w-md leading-relaxed text-muted-foreground">
+              Een clip, cover, logo of combinatie — stuur een bericht met je
+              idee, referenties of release datum. Astro reageert persoonlijk.
             </p>
             <div className="space-y-4 text-sm">
               {[
-                ["E-mail", "info@stanicdesign.nl"],
-                ["Telefoon", "06 36408116"],
+                ["E-mail", brand.email],
                 ["Reactie", "binnen 24 uur"],
                 ["Gesprek", "altijd vrijblijvend"],
-                ["KvK", "Opstartende"],
-                ["BTW", "vrijgesteld (KOR)"],
+                ["Focus", brand.tagline],
               ].map(([k, v]) => (
                 <div key={k} className="flex items-baseline gap-4">
-                  <span className="w-24 shrink-0 text-[hsl(var(--muted-foreground))]">
+                  <span className="w-24 shrink-0 text-muted-foreground">
                     {k}
                   </span>
                   <span>{v}</span>
@@ -107,18 +106,18 @@ export function Contact() {
           </Reveal>
 
           <Reveal delay={150} className="md:col-span-7">
-            <div className="mb-10 inline-flex items-center gap-1 rounded-full border border-white/10 bg-[hsl(var(--card)/0.4)] p-1">
+            <div className="mb-10 inline-flex items-center gap-1 rounded-full border border-white/10 bg-card/40 p-1">
               <button
                 type="button"
                 onClick={() => setMode("booking")}
                 className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${
                   mode === "booking"
                     ? "bg-white text-black"
-                    : "text-[hsl(var(--muted-foreground))] hover:text-white"
+                    : "text-muted-foreground hover:text-white"
                 }`}
               >
                 <Calendar size={14} />
-                Plan een afspraak
+                Plan een call
               </button>
               <button
                 type="button"
@@ -126,7 +125,7 @@ export function Contact() {
                 className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${
                   mode === "message"
                     ? "bg-white text-black"
-                    : "text-[hsl(var(--muted-foreground))] hover:text-white"
+                    : "text-muted-foreground hover:text-white"
                 }`}
               >
                 <Mail size={14} />
@@ -150,7 +149,7 @@ export function Contact() {
               >
                 {(["name", "email", "phone", "message"] as const).map((key) => (
                   <div key={key}>
-                    <label className="mb-3 block text-xs uppercase tracking-wider text-[hsl(var(--muted-foreground))]">
+                    <label className="mb-3 block text-xs uppercase tracking-wider text-muted-foreground">
                       {labels[key]}
                     </label>
                     {key === "message" ? (
@@ -160,6 +159,7 @@ export function Contact() {
                         onChange={(e) =>
                           setForm({ ...form, [key]: e.target.value })
                         }
+                        placeholder="Bijv. videoclip voor nieuwe single, stijl referenties, deadline…"
                         className="w-full resize-none border-0 border-b border-white/15 bg-transparent pb-3 text-lg outline-none focus:border-white/40"
                       />
                     ) : (
