@@ -340,6 +340,22 @@ h6 {
   line-height: 1.7;
 }
 
+@keyframes scroll-hint-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+.scroll-hint-bounce {
+  animation: scroll-hint-bounce 2s ease-in-out infinite;
+}
+
 @keyframes pulse-ring {
   0% {
     transform: scale(1);

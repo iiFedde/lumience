@@ -2,14 +2,20 @@ type FeaturedClipProps = {
   youtubeId: string;
   label?: string;
   title?: string;
+  className?: string;
 };
 
-export function FeaturedClip({ youtubeId, label, title }: FeaturedClipProps) {
+export function FeaturedClip({
+  youtubeId,
+  label,
+  title,
+  className = "",
+}: FeaturedClipProps) {
   const embedUrl = `https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0&modestbranding=1`;
 
   return (
-    <section className="mt-12 w-full max-w-xl text-left">
-      {label && <p className="eyebrow mb-4">{label}</p>}
+    <section className={`w-full max-w-xl ${className}`}>
+      {label && <p className="eyebrow mb-4 text-center">{label}</p>}
       <div className="overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_24px_80px_-24px_rgba(0,0,0,0.8)]">
         <div className="relative aspect-video">
           <iframe
@@ -23,7 +29,7 @@ export function FeaturedClip({ youtubeId, label, title }: FeaturedClipProps) {
         </div>
       </div>
       {title && (
-        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-4 text-center text-sm leading-relaxed text-muted-foreground">
           {title}
         </p>
       )}
