@@ -16,6 +16,7 @@ export const brand = {
   /** Eén clip op de coming soon-pagina — geen volledig portfolio nodig. */
   featuredClip: {
     youtubeId: "DIsvkgHQCPI",
+    spotifyTrackId: "0D9rHJbgFtKEvHn9XuMB9a",
     title: "wstxnks - 13 (Official music video)",
   },
 } as const;

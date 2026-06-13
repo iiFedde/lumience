@@ -55,6 +55,7 @@ export function ComingSoon() {
           <div className="container flex justify-center">
             <FeaturedClip
               youtubeId={clip.youtubeId}
+              spotifyTrackId={clip.spotifyTrackId}
               title={clip.title}
             />
           </div>
