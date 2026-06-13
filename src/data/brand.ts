@@ -6,4 +6,6 @@ export const brand = {
   designer: "Astro",
   location: "Nederland",
   since: "2024",
+  /** Zet op false als de volledige site live mag. */
+  comingSoon: true,
 } as const;

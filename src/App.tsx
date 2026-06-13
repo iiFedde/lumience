@@ -6,8 +6,18 @@ import { Services } from "./pages/Services";
 import { Contact } from "./pages/Contact";
 import { Offerte } from "./pages/Offerte";
 import { Privacy, Cookies, Voorwaarden } from "./pages/Legal";
+import { ComingSoon } from "./pages/ComingSoon";
+import { brand } from "./data/brand";
 
 export default function App() {
+  if (brand.comingSoon) {
+    return (
+      <Routes>
+        <Route path="*" element={<ComingSoon />} />
+      </Routes>
+    );
+  }
+
   return (
     <Routes>
       <Route element={<Layout />}>
