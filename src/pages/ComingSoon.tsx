@@ -1,19 +1,7 @@
-import { Instagram, Mail, Youtube } from "lucide-react";
+import { Mail } from "lucide-react";
 import { LogoMark } from "../components/LogoMark";
+import { SocialIcons } from "../components/SocialIcons";
 import { brand } from "../data/brand";
-
-const socialLinks = [
-  {
-    label: "YouTube",
-    href: brand.social.youtube,
-    icon: Youtube,
-  },
-  {
-    label: "Instagram",
-    href: brand.social.instagram,
-    icon: Instagram,
-  },
-] as const;
 
 export function ComingSoon() {
   return (
@@ -52,20 +40,7 @@ export function ComingSoon() {
           {brand.email}
         </a>
 
-        <div className="mt-8 flex items-center gap-3">
-          {socialLinks.map(({ label, href, icon: Icon }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-muted-foreground transition hover:border-white/30 hover:text-foreground hover:scale-105"
-            >
-              <Icon className="h-5 w-5" strokeWidth={1.75} />
-            </a>
-          ))}
-        </div>
+        <SocialIcons />
 
         <p className="mt-8 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
           {brand.location} · {brand.since}
