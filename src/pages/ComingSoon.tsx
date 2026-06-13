@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react";
-import { LogoMark } from "../components/LogoMark";
+import { AstroLogo } from "../components/AstroLogo";
 import { SocialIcons } from "../components/SocialIcons";
 import { brand } from "../data/brand";
 
@@ -13,7 +13,7 @@ export function ComingSoon() {
       />
 
       <div className="relative z-10 flex max-w-lg flex-col items-center text-center">
-        <LogoMark size={56} />
+        <AstroLogo size="hero" className="drop-shadow-[0_0_40px_rgba(255,255,255,0.08)]" />
 
         <p className="eyebrow mt-10">Opening soon</p>
 
@@ -28,8 +28,8 @@ export function ComingSoon() {
         </h1>
 
         <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-          {brand.name} komt eraan — {brand.tagline.toLowerCase()} door{" "}
-          {brand.designer}. De site wordt op dit moment gebouwd.
+          {brand.tagline} door {brand.designer}. De site wordt op dit moment
+          gebouwd.
         </p>
 
         <a

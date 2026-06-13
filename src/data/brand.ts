@@ -1,6 +1,7 @@
 export const brand = {
   name: "Astro Visuals",
   shortName: "Astro",
+  logo: "/logo-astro.png",
   tagline: "Videoclips, logo's & album covers",
   email: "hello@astrovisuals.nl",
   designer: "Astro",
