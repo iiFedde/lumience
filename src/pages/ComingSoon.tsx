@@ -22,10 +22,8 @@ export function ComingSoon() {
             className="drop-shadow-[0_0_40px_rgba(255,255,255,0.08)]"
           />
 
-          <p className="eyebrow mt-10">Opening soon</p>
-
           <h1
-            className="display mt-6 text-balance uppercase"
+            className="display mt-10 text-balance uppercase"
             style={{ fontSize: "clamp(2rem, 8vw, 3.75rem)" }}
           >
             Binnenkort{" "}
@@ -57,7 +55,6 @@ export function ComingSoon() {
           <div className="container flex justify-center">
             <FeaturedClip
               youtubeId={clip.youtubeId}
-              label={clip.label}
               title={clip.title}
             />
           </div>
