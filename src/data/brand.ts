@@ -8,4 +8,8 @@ export const brand = {
   since: "2024",
   /** Zet op false als de volledige site live mag. */
   comingSoon: true,
+  social: {
+    youtube: "https://www.youtube.com/@astrofso",
+    instagram: "https://www.instagram.com/astrofso/",
+  },
 } as const;
