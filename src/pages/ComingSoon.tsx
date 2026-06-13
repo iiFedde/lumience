@@ -1,4 +1,3 @@
-import { Mail } from "lucide-react";
 import { AstroLogo } from "../components/AstroLogo";
 import { SocialIcons } from "../components/SocialIcons";
 import { brand } from "../data/brand";
@@ -32,15 +31,7 @@ export function ComingSoon() {
           gebouwd.
         </p>
 
-        <a
-          href={`mailto:${brand.email}?subject=${encodeURIComponent("Contact Astro Visuals")}`}
-          className="pill-light mt-10 group"
-        >
-          <Mail className="h-4 w-4" />
-          {brand.email}
-        </a>
-
-        <SocialIcons />
+        <SocialIcons className="mt-10" />
 
         <p className="mt-8 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
           {brand.location} · {brand.since}

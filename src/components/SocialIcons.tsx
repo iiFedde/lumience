@@ -30,9 +30,9 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
-export function SocialIcons() {
+export function SocialIcons({ className = "" }: { className?: string }) {
   return (
-    <div className="mt-8 flex items-center gap-3">
+    <div className={`flex items-center gap-3 ${className}`}>
       <a
         href={brand.social.youtube}
         target="_blank"

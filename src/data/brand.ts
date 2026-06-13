@@ -5,8 +5,8 @@ export const brand = {
   tagline: "Videoclips, logo's & album covers",
   email: "hello@astrovisuals.nl",
   designer: "Astro",
-  location: "Nederland",
-  since: "2024",
+  location: "Amsterdam",
+  since: "2026",
   /** Zet op false als de volledige site live mag. */
   comingSoon: true,
   social: {
