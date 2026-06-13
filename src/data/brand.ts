@@ -13,4 +13,10 @@ export const brand = {
     youtube: "https://www.youtube.com/@astrofso",
     instagram: "https://www.instagram.com/astrofso/",
   },
+  /** Eén clip op de coming soon-pagina — geen volledig portfolio nodig. */
+  featuredClip: {
+    youtubeId: "DIsvkgHQCPI",
+    label: "Voorproefje",
+    title: "Videoclip — meer werk volgt binnenkort.",
+  },
 } as const;

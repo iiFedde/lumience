@@ -1,17 +1,20 @@
 import { AstroLogo } from "../components/AstroLogo";
+import { FeaturedClip } from "../components/FeaturedClip";
 import { SocialIcons } from "../components/SocialIcons";
 import { brand } from "../data/brand";
 
 export function ComingSoon() {
+  const clip = brand.featuredClip;
+
   return (
-    <div className="spotlight relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 py-16">
+    <div className="spotlight relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 py-16 md:py-24">
       <div className="ring-arc" />
       <div
         className="pointer-events-none absolute top-1/4 left-1/2 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-violet-500/10 blur-3xl aurora-drift"
         aria-hidden
       />
 
-      <div className="relative z-10 flex max-w-lg flex-col items-center text-center">
+      <div className="relative z-10 flex w-full max-w-lg flex-col items-center text-center">
         <AstroLogo size="hero" className="drop-shadow-[0_0_40px_rgba(255,255,255,0.08)]" />
 
         <p className="eyebrow mt-10">Opening soon</p>
@@ -30,6 +33,14 @@ export function ComingSoon() {
           {brand.tagline} door {brand.designer}. De site wordt op dit moment
           gebouwd.
         </p>
+
+        {clip && (
+          <FeaturedClip
+            youtubeId={clip.youtubeId}
+            label={clip.label}
+            title={clip.title}
+          />
+        )}
 
         <SocialIcons className="mt-10" />
 
